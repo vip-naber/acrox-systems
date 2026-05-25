@@ -1,0 +1,461 @@
+HTML
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acrox Central Core | Global Portal</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    
+    <style>
+        :root {
+            --bg-dark: #05070a;
+            --card-bg: #0b0e14;
+            --cyber-green: #39ff14;
+            --cyber-blue: #00ecff;
+            --text-white: #ffffff;
+            --text-gray: #9eabb5;
+            --border-color: #1b212c;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* GELİŞTİRİLMİŞ SİBER MAVİ IŞIK EFEKTLERİ */
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(0, 236, 255, 0.15) 0%, transparent 55%),
+                radial-gradient(circle at 20% 50%, rgba(0, 236, 255, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 80% 85%, rgba(0, 236, 255, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 10%;
+            background: rgba(11, 14, 20, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--cyber-blue);
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: var(--cyber-green);
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 10px var(--cyber-blue);
+        }
+
+        .system-status {
+            font-size: 12px;
+            color: var(--cyber-green);
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            background: rgba(57, 255, 20, 0.07);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            text-shadow: 0 0 5px var(--cyber-green);
+        }
+
+        /* HERO ALANI (DAHA GENİŞ) */
+        .hero {
+            text-align: center;
+            padding: 160px 5% 140px 5%;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, var(--text-white), var(--cyber-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(0, 236, 255, 0.25);
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 25px auto 40px auto;
+            line-height: 1.7;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 236, 255, 0.12);
+            border: 1px solid var(--cyber-blue);
+            color: var(--cyber-blue);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(0, 236, 255, 0.2);
+        }
+
+        /* SİSTEM SAYAÇLARI */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            background: rgba(11, 14, 20, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-item div:first-child {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--cyber-blue);
+        }
+
+        .stat-item div:last-child {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* BÜYÜTÜLMÜŞ IP KARTLARI */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 850;
+            margin-bottom: 70px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 15px rgba(0, 236, 255, 0.3);
+        }
+
+        .projects-grid, .team-grid, .agreements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+            margin-bottom: 100px;
+        }
+
+        .project-card, .team-card, .agreement-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover, .team-card:hover, .agreement-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 40px rgba(0, 236, 255, 0.15);
+        }
+
+        .project-icon, .agreement-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .project-card h3, .team-card h3, .agreement-card h3 {
+            font-size: 26px;
+            margin: 0 0 8px 0;
+            color: var(--text-white);
+        }
+
+        .team-card .role {
+            font-size: 13px;
+            color: var(--cyber-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .project-card p, .team-card p, .agreement-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cyber-blue);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            color: var(--cyber-green);
+        }
+
+        /* ANLAŞMALAR STATÜ ETİKETİ */
+        .status-badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--cyber-green);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            margin-top: 10px;
+        }
+
+        /* İLETİŞİM ALANI */
+        .contact-section {
+            background: rgba(11, 14, 20, 0.8);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px 40px;
+            max-width: 700px;
+            margin: 80px auto;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--cyber-blue);
+            color: #000;
+            padding: 15px 45px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: 0.2s;
+            box-shadow: 0 0 15px rgba(0, 236, 255, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--cyber-green);
+            color: #000;
+            box-shadow: 0 0 25px var(--cyber-green);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+            font-size: 14px;
+            background: #06080c;
+        }
+
+        footer span {
+            color: var(--cyber-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="window.scrollTo(0,0)">📡 ACROX<span>.SYSTEMS</span></div>
+        <nav>
+            <a href="#projeler">Sistem Projeleri</a>
+            <a href="#anlasmalar">Resmi Ortaklıklar</a>
+            <a href="#ekibimiz">Komuta Kademesi</a>
+            <a href="#iletisim">Güvenli İletişim</a>
+        </nav>
+        <div class="system-status">PORTAL: ACTIVE ⚡</div>
+    </header>
+
+    <section class="hero">
+        <div class="badge">Acrox Dev Küresel Altyapı Ağı</div>
+        <h1>ACROX SYSTEMS ENTERPRISE</h1>
+        <p>Dağıtık veri tabanları, siber güvenlik protokolleri ve bağımsız ağ yazılımlarından oluşan tam entegre dijital ekosistem.</p>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div>03</div>
+            <div>Aktif Ana Altyapı</div>
+        </div>
+        <div class="stat-item">
+            <div>02</div>
+            <div>Resmi Konsorsiyum</div>
+        </div>
+        <div class="stat-item">
+            <div>256-BIT</div>
+            <div>Kripto Güvenlik</div>
+        </div>
+        <div class="stat-item">
+            <div>ONLINE</div>
+            <div>Veri Hattı Durumu</div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <h2 class="section-title" id="projeler">Entegre <span>Sistem Bileşenleri</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <h3>Buboix Browser</h3>
+                <p>Güvenli, yüksek hızlı ve tamamen bağımsız sörf motoruna sahip, reklam ve takip engelleyici entegreli amiral gemisi web tarayıcı mimarisi.</p>
+                <a href="https://buboix.com" target="_blank" class="project-link">Ağ Motorunu Ateşle →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📡</div>
+                <h3>SezTalk Global</h3>
+                <p>Firebase Realtime ana omurgası üzerine kurulu, şifreli odalar, entegre yapay zeka çekirdeği ve SezCoin cüzdan entegrasyonu barındıran siber iletişim platformu.</p>
+                <a href="https://seztalkforchat.web.app/" target="_blank" class="project-link">Terminal Girişi Yap →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📄</div>
+                <h3>Aura PDF Reader</h3>
+                <p>Starlights / Acrox çatısı altında açık kaynak standartlarında kodlanan, hafif, ultra hızlı ve modern döküman işleme ve yönetim modülü.</p>
+                <a href="https://github.com/Starlights-ofical/Aura-PDF-Reader" target="_blank" class="project-link">Açık Kaynak Kodları İncele →</a>
+            </div>
+        </div>
+
+
+        <h2 class="section-title" id="anlasmalar">Resmi <span>Stratejik Anlaşmalar</span></h2>
+        <div class="agreements-grid">
+            
+            <div class="agreement-card">
+                <div class="agreement-icon">🤝</div>
+                <h3>buboixstudios Anlaşması</h3>
+                <p>Acrox Labs ile buboixstudios arasında imzalanan ortaklık gereği; web motoru optimizasyonları, tarayıcı sunucu altyapıları ve ortak veri dağıtım ağları tam senkronize olarak çalıştırılmaktadır.</p>
+                <div class="status-badge">PROTOKOL: İMZALANDI 🔒</div>
+            </div>
+
+            <div class="agreement-card">
+                <div class="agreement-icon">✨</div>
+                <h3>starlights studios Anlaşması</h3>
+                <p>Acrox Systems ile starlights studios arasındaki küresel teknoloji anlaşması uyarınca, Aura PDF projesi başta olmak üzere tüm açık kaynak kodlu yazılımlar ve dijital operasyonlar ortak havuzda birleştirilmiştir.</p>
+                <div class="status-badge">PROTOKOL: AKTİF KONSORSİYUM ⚡</div>
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title" id="ekibimiz">Acrox <span>Komuta Kademesi</span></h2>
+        <div class="team-grid">
+            
+            <div class="team-card">
+                <h3>Ali Acar</h3>
+                <div class="role">Şirket Sahibi / Geliştirici / Üst Düzey Ekip Yöneticisi</div>
+                <p>Acrox ekosisteminin genel kurucu lideri, tüm çekirdek ağ mimarilerinin, yazılım vizyonunun ve operasyon yönetiminin başındaki tepe karar merci.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Kerem Kuluhan</h3>
+                <div class="role">Kurucu Ortak / Planlama Müdürü / Ekip Yöneticisi / Yazılımcı</div>
+                <p>Sistem stratejilerinin dizayn edilmesi, operasyonel iş geliştirme süreçleri ve çekirdek kod altyapılarının yapılandırılmasından sorumlu yönetici.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Kerem Tahir</h3>
+                <div class="role">Kurucu Ortak / Yazılımcı</div>
+                <p>Sistem arka plan (backend) servis kodlarının yazılması, veri senkronizasyon modelleri ve yazılım modüllerinin stabilizasyonundan sorumlu ortak.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Eren İnce</h3>
+                <div class="role">Güvenlik Takımı Kaptanı</div>
+                <p>Acrox veri havuzlarının, aktif web projelerinin siber güvenliğinden, sızma testlerinden ve ağ defans sistemlerinin yönetiminden sorumlu komutan.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Can Soğukpınar</h3>
+                <div class="role">Güvenlik Takımı Üyesi</div>
+                <p>Güvenlik kaptanlığına bağlı olarak anlık veri trafiği takibi, siber saldırı engelleme protokolleri ve kullanıcı kimlik koruma uzmanı.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Berk Temurcan</h3>
+                <div class="role">Pazarlama Müdürü</div>
+                <p>Acrox markasının dijital platformlardaki konumlandırması, küresel büyüme planları ve kullanıcı edinme stratejilerinin başındaki isim.</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Atlas Deniz Şahal</h3>
+                <div class="role">Reklam ve Pazarlama Sorumlusu</div>
+                <p>Sistem projelerinin ve servis ağlarının geniş kitlelere ulaştırılmasını sağlayan reklam kampanyaları ve kullanıcı etkileşim yöneticisi.</p>
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title" id="iletisim">Merkez <span>Bağlantı Hattı</span></h2>
+        <div class="contact-section">
+            <h3 style="color: var(--cyber-blue); font-size: 28px; margin-top: 0;">Acrox Labs Şifreli İletişim</h3>
+            <p style="font-size: 16px;">Sistem entegrasyonları, stratejik kurumsal ortaklıklar veya siber güvenlik bildirimleri için resmi güvenli e-posta ağımız üzerinden komuta kademesiyle doğrudan temas kurabilirsiniz.</p>
+            <div style="font-size: 20px; color: var(--cyber-green); font-weight: bold; margin: 25px 0; letter-spacing: 0.5px;">📬 AcroxLabs@protonmail.com</div>
+            <a href="mailto:AcroxLabs@protonmail.com" class="contact-btn">E-Posta Bağlantısı Kur</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>ACROX SYSTEMS</span>. Tüm Küresel Hakları Bağımsız Ağ Güvencesindedir.</p>
+    </footer>
+
+</body>
+</html>
