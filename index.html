@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acrox Dev | Bağımsız Geliştirici Grubu</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
-    
     <style>
         :root {
             --bg-dark: #05070a;
@@ -16,11 +15,9 @@
             --text-gray: #9eabb5;
             --border-color: #1b212c;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-dark);
@@ -34,7 +31,6 @@
                 radial-gradient(circle at 80% 85%, rgba(0, 236, 255, 0.1) 0%, transparent 50%);
             background-attachment: fixed;
         }
-
         header {
             display: flex;
             justify-content: space-between;
@@ -47,7 +43,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .logo {
             font-size: 26px;
             font-weight: 900;
@@ -58,16 +53,13 @@
             gap: 12px;
             cursor: pointer;
         }
-
         .logo span {
             color: var(--cyber-green);
         }
-
         nav {
             display: flex;
             gap: 35px;
         }
-
         nav a {
             color: var(--text-gray);
             text-decoration: none;
@@ -76,11 +68,9 @@
             letter-spacing: 0.5px;
             transition: color 0.2s;
         }
-
         nav a:hover {
             color: var(--cyber-blue);
         }
-
         .system-status {
             font-size: 12px;
             color: var(--cyber-green);
@@ -91,12 +81,10 @@
             border-radius: 8px;
             border: 1px solid rgba(57, 255, 20, 0.3);
         }
-
         .hero {
             text-align: center;
             padding: 160px 5% 140px 5%;
         }
-
         .hero h1 {
             font-size: 72px;
             font-weight: 900;
@@ -107,7 +95,6 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 40px rgba(0, 236, 255, 0.25);
         }
-
         .hero p {
             font-size: 22px;
             color: var(--text-gray);
@@ -115,7 +102,6 @@
             margin: 25px auto 40px auto;
             line-height: 1.7;
         }
-
         .badge {
             display: inline-block;
             padding: 8px 20px;
@@ -129,31 +115,26 @@
             letter-spacing: 1.5px;
             margin-bottom: 25px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
-
         .section-title {
             text-align: center;
             font-size: 40px;
             font-weight: 850;
             margin-bottom: 70px;
         }
-
         .section-title span {
             color: var(--cyber-blue);
         }
-
         .projects-grid, .team-grid, .agreements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 35px;
             margin-bottom: 100px;
         }
-
         .project-card, .team-card, .agreement-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -161,23 +142,19 @@
             padding: 40px;
             transition: transform 0.3s, border-color 0.3s;
         }
-
         .project-card:hover, .team-card:hover, .agreement-card:hover {
             transform: translateY(-8px);
             border-color: var(--cyber-blue);
         }
-
         .project-icon, .agreement-icon {
             font-size: 50px;
             margin-bottom: 25px;
         }
-
         .project-card h3, .team-card h3, .agreement-card h3 {
             font-size: 26px;
             margin: 0 0 8px 0;
             color: var(--text-white);
         }
-
         .team-card .role {
             font-size: 13px;
             color: var(--cyber-blue);
@@ -186,14 +163,12 @@
             letter-spacing: 1px;
             margin-bottom: 20px;
         }
-
         .project-card p, .team-card p, .agreement-card p {
             color: var(--text-gray);
             font-size: 15px;
             line-height: 1.7;
             margin-bottom: 30px;
         }
-
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -203,7 +178,6 @@
             font-size: 15px;
             font-weight: bold;
         }
-
         .status-badge {
             display: inline-block;
             font-size: 11px;
@@ -215,7 +189,6 @@
             border: 1px solid rgba(0, 236, 255, 0.3);
             margin-top: 10px;
         }
-
         .contact-section {
             background: rgba(11, 14, 20, 0.8);
             border: 2px solid var(--border-color);
@@ -225,7 +198,6 @@
             margin: 80px auto;
             text-align: center;
         }
-
         .contact-btn {
             display: inline-block;
             background: var(--cyber-blue);
@@ -238,20 +210,17 @@
             margin-top: 25px;
             transition: 0.2s;
         }
-
         .contact-btn:hover {
             background: var(--cyber-green);
         }
-
         footer {
-            text-align: center;
+            text-align: center;            
             padding: 60px 20px;
             border-top: 1px solid var(--border-color);
             color: var(--text-gray);
             font-size: 14px;
             background: #06080c;
         }
-
         footer span {
             color: var(--cyber-blue);
             font-weight: bold;
@@ -282,6 +251,13 @@
         <h2 class="section-title" id="projeler">Geliştirdiğimiz <span>Yazılımlar</span></h2>
         <div class="projects-grid">
             <div class="project-card">
+                <div class="project-icon">🕷️</div>
+                <h3>SpySpider Agent</h3>
+                <p>Groq ve Claude (Anthropic) çift yapay zeka motoru destekli, siber platformlara sızıp bağımsız operasyon yapabilen asi ve özgür ruhlu siber ajan projemiz.</p>
+                <a href="https://github.com/vip-naber/spyspideragent" target="_blank" class="project-link">GitHub'da İndir →</a>
+            </div>
+
+            <div class="project-card">
                 <div class="project-icon">🌐</div>
                 <h3>Buboix Browser</h3>
                 <p>Ekibimizin açık kaynak kodlarla tasarladığı, hızlı ve bağımsız bir sörf deneyimi sunmayı amaçlayan tarayıcı çalışmamız.</p>
@@ -305,7 +281,6 @@
 
         <h2 class="section-title" id="ortakliklar">Geliştirici <span>Ortaklıklarımız</span></h2>
         <div class="agreements-grid">
-            
             <div class="agreement-card">
                 <div class="agreement-icon">🤝</div>
                 <h3>buboixstudios İş Birliği</h3>
@@ -319,12 +294,10 @@
                 <p>Aura PDF projesi başta olmak üzere, açık kaynaklı geliştirme süreçlerinde fikir alışverişi ve ortak kodlama çalışmaları yürütülmektedir.</p>
                 <div class="status-badge">DURUM: ORTAK ÇALIŞMA ⚡</div>
             </div>
-
         </div>
 
         <h2 class="section-title" id="ekibimiz">Acrox <span>Ekip Kadrosu</span></h2>
         <div class="team-grid">
-            
             <div class="team-card">
                 <h3>Ali Acar</h3>
                 <div class="role">Grup Kurucusu / Üst Düzey Yönetici / Geliştirici</div>
@@ -360,7 +333,6 @@
                 <div class="role">Tanıtım Sorumlusu</div>
                 <p>Acrox projelerinin diğer öğrenci arkadaşlara ulaştırılması ve topluluk etkileşimi sorumlusu.</p>
             </div>
-
         </div>
 
         <h2 class="section-title" id="iletisim">Ekip <span>İletişim Hattı</span></h2>
