@@ -169,6 +169,11 @@
             line-height: 1.7;
             margin-bottom: 30px;
         }
+        .project-links-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -177,6 +182,9 @@
             text-decoration: none;
             font-size: 15px;
             font-weight: bold;
+        }
+        .project-link.secondary {
+            color: var(--cyber-green);
         }
         .status-badge {
             display: inline-block;
@@ -188,6 +196,11 @@
             color: var(--cyber-blue);
             border: 1px solid rgba(0, 236, 255, 0.3);
             margin-top: 10px;
+        }
+        .status-badge.green {
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--cyber-green);
+            border: 1px solid rgba(57, 255, 20, 0.3);
         }
         .contact-section {
             background: rgba(11, 14, 20, 0.8);
@@ -254,28 +267,37 @@
                 <div class="project-icon">🕷️</div>
                 <h3>SpySpider Agent</h3>
                 <p>Groq ve Claude (Anthropic) çift yapay zeka motoru destekli, siber platformlara sızıp bağımsız operasyon yapabilen asi ve özgür ruhlu siber ajan projemiz.</p>
-                <a href="https://github.com/vip-naber/spyspideragent" target="_blank" class="project-link">GitHub'da İndir →</a>
+                <div class="project-links-container">
+                    <a href="https://github.com/vip-naber/spyspideragent" target="_blank" class="project-link">GitHub'da İndir →</a>
+                    <a href="https://vip-naber.github.io/spyspider-webinfo/" target="_blank" class="project-link secondary">Detaylar Page →</a>
+                </div>
             </div>
 
             <div class="project-card">
                 <div class="project-icon">🌐</div>
                 <h3>Buboix Browser</h3>
                 <p>Ekibimizin açık kaynak kodlarla tasarladığı, hızlı ve bağımsız bir sörf deneyimi sunmayı amaçlayan tarayıcı çalışmamız.</p>
-                <a href="https://buboix.com" target="_blank" class="project-link">İncele →</a>
+                <div class="project-links-container">
+                    <a href="https://buboix.com" target="_blank" class="project-link">İncele →</a>
+                </div>
             </div>
 
             <div class="project-card">
                 <div class="project-icon">📡</div>
                 <h3>SezTalk Global</h3>
                 <p>Firebase altyapısı kullanan, mesajlaşma odaları ve deneysel SezCoin cüzdan simülasyonu içeren sohbet aracı projemiz.</p>
-                <a href="https://seztalkforchat.web.app/" target="_blank" class="project-link">Göz At →</a>
+                <div class="project-links-container">
+                    <a href="https://seztalkforchat.web.app/" target="_blank" class="project-link">Göz At →</a>
+                </div>
             </div>
 
             <div class="project-card">
                 <div class="project-icon">📄</div>
                 <h3>Aura PDF Reader</h3>
                 <p>Starlights / Acrox çatısı altında açık kaynak standartlarında kodlanan, hafif ve modern tasarımlı PDF okuyucu modülü.</p>
-                <a href="https://github.com/Starlights-ofical/Aura-PDF-Reader" target="_blank" class="project-link">Kodları İncele →</a>
+                <div class="project-links-container">
+                    <a href="https://github.com/Starlights-ofical/Aura-PDF-Reader" target="_blank" class="project-link">Kodları İncele →</a>
+                </div>
             </div>
         </div>
 
@@ -293,6 +315,13 @@
                 <h3>starlights studios İş Birliği</h3>
                 <p>Aura PDF projesi başta olmak üzere, açık kaynaklı geliştirme süreçlerinde fikir alışverişi ve ortak kodlama çalışmaları yürütülmektedir.</p>
                 <div class="status-badge">DURUM: ORTAK ÇALIŞMA ⚡</div>
+            </div>
+
+            <div class="agreement-card" style="cursor: pointer;" onclick="window.open('https://arvasin.com.tr', '_blank')">
+                <div class="agreement-icon">🏢</div>
+                <h3>Arvasin Anlaşması</h3>
+                <p>Acrox Dev ve Arvasin arasında siber altyapı, stratejik teknoloji çözümleri ve kurumsal sistem entegrasyonu alanlarında imzalanan özel protokol.</p>
+                <div class="status-badge green">DURUM: PROTOKOL BAĞLANDI 🌐</div>
             </div>
         </div>
 
